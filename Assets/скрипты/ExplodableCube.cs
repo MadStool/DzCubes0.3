@@ -13,7 +13,7 @@ public class ExplodableCube : MonoBehaviour
         _renderer = GetComponent<Renderer>();
 
         if (_renderer == null) 
-            Debug.LogError("Renderer не найден на кубе!");
+            Debug.LogError("Renderer not found in Cuba!");
     }
 
     public void Initialize(float chance)

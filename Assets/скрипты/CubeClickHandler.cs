@@ -25,7 +25,7 @@ public class CubeClickHandler : MonoBehaviour
     {
         if(_gameManager == null)
         {
-            Debug.LogError("GameManager не назначен!");
+            Debug.LogError("GameManager not assigned!");
             return;
         }
 

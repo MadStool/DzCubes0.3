@@ -17,7 +17,7 @@ public class CubeSpawner : MonoBehaviour
             _colorManager = FindAnyObjectByType<CubeColorManager>();
 
             if (_colorManager == null) 
-                Debug.LogError("CubeColorManager не найден!");
+                Debug.LogError("CubeColorManager not found!");
         }
     }
 
@@ -25,7 +25,7 @@ public class CubeSpawner : MonoBehaviour
     {
         if (_cubePrefab == null || _colorManager == null) 
         {
-            Debug.LogWarning("Ќе хватает ссылок дл€ спавна кубов");
+            Debug.LogWarning("There are not enough links to spawn cubes");
             return null;
         }
 

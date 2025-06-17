@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CubeColorManager : MonoBehaviour
 {
-    [Header("настройки цвета/интенсивность")]
+    [Header("color/intensity settings")]
     [SerializeField] private Color[] _availableColors;
     [SerializeField] private float _colorVariation = 10f;
 

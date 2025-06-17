@@ -9,10 +9,10 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         if (_exploder == null) 
-            Debug.LogError("CubeExploder не назначен в GameManager!");
+            Debug.LogError("CubeExploder not assigned in GameManager!");
 
         if (_spawner == null) 
-            Debug.LogError("CubeSpawner не назначен в GameManager!");
+            Debug.LogError("CubeSpawner not assigned in GameManager!");
     }
 
     public void HandleCubeClick(ExplodableCube cube)
