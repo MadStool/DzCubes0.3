@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class CubeExploder : MonoBehaviour
+public class CubePhysics : MonoBehaviour
 {
     [SerializeField] private float _explosionForce = 5f;
     [SerializeField] private float _explosionRadius = 3f;

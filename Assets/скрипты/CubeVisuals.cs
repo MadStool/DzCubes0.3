@@ -1,30 +1,18 @@
 using UnityEngine;
 
-public class CubeColorManager : MonoBehaviour
+public class CubeVisuals : MonoBehaviour
 {
     [Header("color/intensity settings")]
     [SerializeField] private Color[] _availableColors;
     [SerializeField] private float _colorVariation = 10f;
 
-    public void ApplyRandomColor(GameObject cube)
+    public void ApplyRandomColor(ExplodableCube cube)
     {
-        if(cube.TryGetComponent<Renderer>(out var renderer))
-        {
-            Color randomColor = GetRandomColor();
-            renderer.material.color = randomColor;
-        }
+        if (cube.TryGetComponent(out Renderer renderer))
+            renderer.material.color = GetRandomColor();
     }
 
-    public void ApplyColorVariation(GameObject cube, Color baseColor)
-    {
-        if(cube.TryGetComponent<Renderer>(out var renderer))
-        {
-            Color variedColor = GetVariedColor(baseColor);
-            renderer.material.color = variedColor;
-        }
-    }
-
-    private Color GetRandomColor()
+    public Color GetRandomColor()
     {
         Color[] simpleColors = new Color[]
          {
