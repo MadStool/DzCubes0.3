@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CubeInputHandler : MonoBehaviour
 {
-    private const int LeftMouseButton = 0;
+    private const int MouseButton = 0;
 
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private CubeInteractionHandler _interactionHandler;
@@ -15,7 +15,7 @@ public class CubeInputHandler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(LeftMouseButton))
+        if (Input.GetMouseButtonDown(MouseButton))
             HandleClick();
     }
 

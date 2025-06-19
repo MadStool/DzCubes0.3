@@ -12,15 +12,24 @@ public class ExplodableCube : MonoBehaviour
     private Color _cubeColor;
 
     public float SplitChance => _splitChance;
+
     public Color CubeColor => _cubeColor;
+
     public Rigidbody CubeRigidbody => _rigidbody;
+
     public float ExplosionRadius => transform.localScale.x * _explosionRadiusMultiplier;
+
     public float ExplosionForce => _explosionForceMultiplier / transform.localScale.x;
 
     private void Awake()
     {
         _renderer = GetComponent<Renderer>();
         _rigidbody = GetComponent<Rigidbody>();
+    }
+
+    public void SetColor(Color color)
+    {
+        _renderer.material.color = color;
     }
 
     public void Initialize(float chance, Color color)

@@ -8,7 +8,7 @@ public class CubeVisuals : MonoBehaviour
 
     public void ApplyRandomColor(ExplodableCube cube)
     {
-        cube.GetComponent<Renderer>().material.color = GetRandomColor();
+        cube.SetColor(GetRandomColor());
     }
 
     public Color GetRandomColor()

@@ -13,8 +13,6 @@ public class CubeInteractionHandler : MonoBehaviour
 
         Vector3 explosionCenter = cube.transform.position;
 
-        ExplodeNearbyCubes(cube, explosionCenter);
-
         if (cube.ShouldSplit())
         {
             var newCubes = _spawner.SpawnChildCubes(
@@ -23,19 +21,10 @@ public class CubeInteractionHandler : MonoBehaviour
                 cube.SplitChance,
                 cube.CubeColor
             );
+
             _exploder.ExplodeCubes(newCubes, explosionCenter);
         }
 
         Destroy(cube.gameObject);
-    }
-
-    private void ExplodeNearbyCubes(ExplodableCube cube, Vector3 explosionCenter)
-    {
-        var nearbyCubes = Physics.OverlapSphere(explosionCenter, cube.ExplosionRadius)
-            .Select(colllider => colllider.GetComponent<ExplodableCube>())
-            .Where(cubes => cubes != null)
-            .ToArray();
-
-        _exploder.ExplodeCubes(nearbyCubes, explosionCenter);
     }
 }
